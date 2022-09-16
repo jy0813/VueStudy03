@@ -1,13 +1,17 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import { NewsView } from "../views/NewsView.vue";
-import { AskVuew } from "../views/AskVuew.vue";
+import { AskVuew } from "../views/AskView.vue";
 import { JobsView } from "../views/JobsView.vue";
 
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
   routes: [
+    {
+      path: "/",
+      redirect: "/news",
+    },
     {
       path: "/news", //url 주소
       component: NewsView, //url에 해당하는 컴포넌트

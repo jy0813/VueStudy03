@@ -1,14 +1,14 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <Toolbar></Toolbar>
+  </div>
 </template>
 
 <script>
+import Toolbar from "./components/ToolBar.vue";
+
 export default {
-  methods: {
-    fetchData() {
-      console.log("hello");
-    },
-  },
+  components: { Toolbar },
 };
 </script>
 
