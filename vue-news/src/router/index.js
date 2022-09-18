@@ -14,16 +14,16 @@ export const router = new VueRouter({
       redirect: "/news",
     },
     {
-      path: "/news", //url 주소
-      component: NewsView, //url에 해당하는 컴포넌트
+      path: "/news",
+      component: NewsView,
     },
     {
-      path: "/ask", //url 주소
-      component: AskVuew, //url에 해당하는 컴포넌트
+      path: "/ask",
+      component: AskVuew,
     },
     {
-      path: "/jobs", //url 주소
-      component: JobsView, //url에 해당하는 컴포넌트
+      path: "/jobs",
+      component: JobsView,
     },
     {
       path: "/user",
