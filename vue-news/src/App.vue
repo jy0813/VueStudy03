@@ -30,4 +30,14 @@ body {
 .fade-leave-to {
   opacity: 0;
 }
+
+a {
+  color: #34495e;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #41b883;
+  text-decoration: underline;
+}
 </style>
