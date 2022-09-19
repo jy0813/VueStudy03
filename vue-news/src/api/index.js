@@ -20,4 +20,8 @@ const fetchAskList = () => {
   return axios.get(`${config.baseUrl}ask/1.json`);
 };
 
-export { fetchNewsList, fetchJobsList, fetchAskList };
+const fetchUserList = (userName) => {
+  return axios.get(`${config.baseUrl}user/${userName}.json`);
+};
+
+export { fetchNewsList, fetchJobsList, fetchAskList, fetchUserList };
