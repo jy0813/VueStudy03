@@ -16,6 +16,6 @@ export const store = new Vuex.Store({
       return state.ask;
     },
   },
-  mutations: { mutations },
-  actions: { actions },
+  mutations: mutations,
+  actions: actions,
 });
