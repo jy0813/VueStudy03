@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="user in users" :key="user.id">{{ user.title }}</div>
+    <div v-for="item in ask" :key="item.id">{{ item.title }}</div>
   </div>
 </template>
 
@@ -9,12 +9,12 @@ import { fetchAskList } from "../api/index.js";
 export default {
   data() {
     return {
-      users: [],
+      ask: [],
     };
   },
   created() {
     fetchAskList()
-      .then((res) => (this.users = res.data))
+      .then((res) => (this.ask = res.data))
       .catch((err) => console.log(err));
   },
 };
