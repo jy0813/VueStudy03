@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Toolbar></Toolbar>
-    <router-view></router-view>
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -17,5 +19,15 @@ export default {
 body {
   padding: 0;
   margin: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
