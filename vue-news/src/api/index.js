@@ -20,6 +20,10 @@ const fetchAskList = () => {
   return axios.get(`${config.baseUrl}ask/1.json`);
 };
 
+const fetchList = (pageName) => {
+  return axios.get(`${config.baseUrl}${pageName}/1.json`);
+};
+
 const fetchUserList = (userName) => {
   return axios.get(`${config.baseUrl}user/${userName}.json`);
 };
@@ -34,4 +38,5 @@ export {
   fetchAskList,
   fetchUserList,
   fetchItemList,
+  fetchList,
 };

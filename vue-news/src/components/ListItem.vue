@@ -33,27 +33,8 @@
 export default {
   computed: {
     listItems() {
-      const name = this.$route.name;
-      const state = this.$store.state;
-      if (name === "news") {
-        return state.news;
-      } else if (name === "ask") {
-        return state.ask;
-      } else {
-        return state.jobs;
-      }
+      return this.$store.state.list;
     },
-  },
-  created() {
-    const name = this.$route.name;
-    const dispatch = this.$store.dispatch;
-    if (name === "news") {
-      dispatch("FETCH_NEWS");
-    } else if (name === "ask") {
-      dispatch("FETCH_ASK");
-    } else if (name === "jobs") {
-      dispatch("FETCH_JOBS");
-    }
   },
 };
 </script>
