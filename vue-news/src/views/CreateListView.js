@@ -12,12 +12,15 @@ export default function createListView(name) {
       this.$store
         .dispatch("FETCH_LIST", this.$route.name)
         .then(() => {
+          console.log(5);
           console.log("fetched");
-          bus.$emit("end:spinner");
         })
         .catch((err) => {
           console.log(err);
         });
+    },
+    mounted() {
+      bus.$emit("end:spinner");
     },
     render(createElement) {
       return createElement(ListView);
