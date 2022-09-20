@@ -9,7 +9,10 @@ import {
 export default {
   FETCH_NEWS(context) {
     fetchNewsList()
-      .then((res) => context.commit("SET_NEWS", res.data))
+      .then((res) => {
+        context.commit("SET_NEWS", res.data);
+        return res;
+      })
       .catch((err) => console.log(err));
   },
   FETCH_ASK({ commit }) {

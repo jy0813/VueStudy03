@@ -27,14 +27,26 @@
 <script>
 // import { mapGetters } from "vuex";
 import ListItem from "@/components/ListItem.vue";
+import bus from "../utils/bus.js";
 export default {
+  components: { ListItem },
   computed: {
     // ...mapGetters(["fetchedAsk"]),
   },
-  // created() {
-  //   this.$store.dispatch("FETCH_ASK");
-  // },
-  components: { ListItem },
+  created() {
+    bus.$emit("start:spinner");
+    setTimeout(() => {
+      this.$store
+        .dispatch("FETCH_ASK")
+        .then(() => {
+          console.log("fetched");
+          bus.$emit("end:spinner");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, 1500);
+  },
 };
 </script>
 
