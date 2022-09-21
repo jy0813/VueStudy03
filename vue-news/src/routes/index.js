@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import UserView from "../views/UserView.vue";
 import ItemView from "../views/ItemView.vue";
 import CreateListView from "../views/CreateListView";
+import LoginTest from "../views/LoginTest.vue";
 import bus from "../utils/bus";
 import { store } from "../store/index";
 Vue.use(VueRouter);
@@ -72,6 +73,10 @@ export const router = new VueRouter({
     {
       path: "/item/:id",
       component: ItemView,
+    },
+    {
+      path: "/login",
+      component: LoginTest,
     },
   ],
 });
