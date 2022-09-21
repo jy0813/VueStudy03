@@ -9,6 +9,15 @@
         </ul>
       </div>
     </div>
+    <div>
+      <button @click="loginUser1">login</button>
+      <h1>List</h1>
+      <div>
+        <ul>
+          <li v-for="item in items" :key="item.id">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -36,6 +45,18 @@ export default {
           }
         })
         .catch((error) => console.log(error));
+    },
+    async loginUser1() {
+      let response = await axios.get(
+        "https://jsonplaceholder.typicode.com/users/1"
+      );
+      if (response.data.id === 1) {
+        console.log("사용자가 인증되었습니다.");
+        let list = await axios.get(
+          "https://jsonplaceholder.typicode.com/todos"
+        );
+        this.items = list.data;
+      }
     },
   },
 };
