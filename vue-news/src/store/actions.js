@@ -26,23 +26,19 @@ export default {
       .then(({ data }) => commit("SET_JOBS", data))
       .catch((err) => console.log(err));
   },
-  FETCH_USER({ commit }, name) {
-    return fetchUserList(name)
-      .then(({ data }) => commit("SET_USER", data))
-      .catch((err) => console.log(err));
+  async FETCH_USER({ commit }, name) {
+    const res = await fetchUserList(name);
+    commit("SET_USER", res.data);
+    return res;
   },
-  FETCH_ITEM({ commit }, item) {
-    return fetchItemList(item)
-      .then(({ data }) => commit("SET_ITEM", data))
-      .catch((err) => console.log(err));
+  async FETCH_ITEM({ commit }, item) {
+    const res = await fetchItemList(item);
+    commit("SET_ITEM", res.data);
+    return res;
   },
-  FETCH_LIST({ commit }, pageName) {
-    return fetchList(pageName)
-      .then((res) => {
-        console.log(4);
-        commit("SET_LIST", res.data);
-        return res;
-      })
-      .catch((err) => console.log(err));
+  async FETCH_LIST({ commit }, pageName) {
+    const res = await fetchList(pageName);
+    commit("SET_LIST", res.data);
+    return res;
   },
 };

@@ -20,16 +20,31 @@ const fetchAskList = () => {
   return axios.get(`${config.baseUrl}ask/1.json`);
 };
 
-const fetchList = (pageName) => {
-  return axios.get(`${config.baseUrl}${pageName}/1.json`);
+const fetchList = async (pageName) => {
+  try {
+    const res = await axios.get(`${config.baseUrl}${pageName}/1.json`);
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-const fetchUserList = (userName) => {
-  return axios.get(`${config.baseUrl}user/${userName}.json`);
+const fetchUserList = async (userName) => {
+  try {
+    const res = await axios.get(`${config.baseUrl}user/${userName}.json`);
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-const fetchItemList = (itemName) => {
-  return axios.get(`${config.baseUrl}item/${itemName}.json`);
+const fetchItemList = async (itemName) => {
+  try {
+    const res = await axios.get(`${config.baseUrl}item/${itemName}.json`);
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export {
