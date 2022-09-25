@@ -1,15 +1,13 @@
 <template>
   <div>
-    <canvas id="lineChart" width="400" height="400"></canvas>
+    <canvas ref="lineChart" id="lineChart" width="400" height="400"></canvas>
   </div>
 </template>
 
 <script>
-import Chart from "chart.js/auto";
 export default {
   mounted() {
-    const ctx = document.getElementById("lineChart");
-    const myChart = new Chart(ctx, {
+    const myChart = new this.$_Chart(this.$refs.lineChart, {
       type: "line",
       data: {
         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
