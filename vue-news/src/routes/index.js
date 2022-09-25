@@ -7,6 +7,10 @@ import LoginTest from "../views/LoginTest.vue";
 import bus from "../utils/bus";
 import { store } from "../store/index";
 import Chart from "../views/ChartView.vue";
+import Test from "../views/AppTest.vue";
+import Slot from "../views/AppSlot.vue";
+import Controll from "../views/AppControlled.vue";
+import Render from "../views/AppRenderLess.vue";
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
@@ -82,6 +86,22 @@ export const router = new VueRouter({
     {
       path: "/chart",
       component: Chart,
+    },
+    {
+      path: "/test",
+      component: Test,
+    },
+    {
+      path: "/slot",
+      component: Slot,
+    },
+    {
+      path: "/controll",
+      component: Controll,
+    },
+    {
+      path: "/render",
+      component: Render,
     },
   ],
 });
