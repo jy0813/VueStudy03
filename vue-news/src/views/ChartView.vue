@@ -2,12 +2,14 @@
   <div>
     <h1>Chart.js</h1>
     <BarChart></BarChart>
+    <LineChart></LineChart>
   </div>
 </template>
 
 <script>
 import BarChart from "../components/BarChart.vue";
-export default { components: { BarChart } };
+import LineChart from "../components/LineChart.vue";
+export default { components: { BarChart, LineChart } };
 </script>
 
 <style lang="css" scoped></style>
