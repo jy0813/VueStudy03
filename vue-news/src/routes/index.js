@@ -6,6 +6,7 @@ import CreateListView from "../views/CreateListView";
 import LoginTest from "../views/LoginTest.vue";
 import bus from "../utils/bus";
 import { store } from "../store/index";
+import Chart from "../views/ChartView.vue";
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
@@ -77,6 +78,10 @@ export const router = new VueRouter({
     {
       path: "/login",
       component: LoginTest,
+    },
+    {
+      path: "/chart",
+      component: Chart,
     },
   ],
 });
